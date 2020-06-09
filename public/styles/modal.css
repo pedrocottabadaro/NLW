@@ -78,3 +78,30 @@
 #modal.hide {
     display: none;
 }
+
+
+/* Modal de point created*/
+#modal.point .content  {
+
+    align-items: center;
+
+
+}
+
+#modal.point h1{
+    color: white;
+    margin-top: 29px;
+}
+
+
+#modal.error .content {
+    align-items: center;
+}
+#modal.error h1{
+    color: red;
+    margin-top: 29px;
+}
+
+#modal.error img{
+    width: 40%;
+}

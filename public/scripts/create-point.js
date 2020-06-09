@@ -52,24 +52,35 @@ function handleSelectedItem(event){
     itemLi.classList.toggle("selected");
     const itemId=itemLi.dataset.id;
     
-    const alreadySelected=selectedItems.findIndex(item=>
-        item==itemId
-    )
+    // console.log("ITEM id:  ",itemId);
 
-    console.log(alreadySelected);
+
+    //verificar se existem itens selecionados, 
+    //se tiver pegar eles
+    const alreadySelected=selectedItems.findIndex((item)=>{
+        const itemFound =item==itemId
+        return itemFound
+    }  )
+
+    
 
     if(alreadySelected>=0){
-        const filteredItems=selectedItems.filter(item=>
-            item!=itemId
-            )
+        //tirar da selecao
+        const filteredItems=selectedItems.filter((item)=>{
+            const itemIsDifferent=item!=itemId
+            return itemIsDifferent
+        } )
 
             selectedItems=filteredItems;
     }
     else{
+        //inserir se nao tiver
         selectedItems.push(itemId);
     }
   
-    
+    // console.log("selected items : ",selectedItems);
+    //atualizar com os valores selecionados
+    //bota no input para exibir no url
     collectedItems.value=selectedItems;
 
 }
